@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\HomeController;
 
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front.pages.home.index');
 });
+
+Route::resource('carts',CartController::class);
+
+
 
 Route::get('/about', function () {
     return view('front.pages.about.index');

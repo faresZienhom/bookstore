@@ -29,7 +29,7 @@
               <button class="single-product__increase border-0 bg-transparent position-absolute end-0 h-100 px-3">+</button>
               <button class="single-product__decrease border-0 bg-transparent position-absolute start-0 h-100 px-3">-</button>
             </div>
-            <button class="single-product__add-to-cart primary-button w-100">اضافه الي السلة</button>
+            <a href="{{ route('carts.create') }}" class="btn btn-primary">>اضافه الي السلة</a>
           </div>
           <div class="single-product__favourite d-flex align-items-center gap-2 mb-4">
             <i class="fa-regular fa-heart"></i>

@@ -6,21 +6,30 @@
 
 <main>
     <!-- Product details Start -->
-    <section class="section-container my-5 pt-5 d-md-flex gap-5">
-      <div class="single-product__img w-100" id="main-img">
-        <img src="{{asset("front")}}/assets/images/product-2.webp" alt="">
-      </div>
-      <div class="single-product__details w-100 d-flex flex-column justify-content-between">
-        <div>
+            @if(session()->has('success'))
+    <div class=" alert alert-success">
+       {{ session()->get('success') }}
+</div>
+    @endif
 
-            <h4>Modern Full-Stack Development</h4>
-            <div class="product__author">Frank Zammetti</div>
-            <div class="product__author">373 صفحة</div>
+
+    <section class="section-container my-5 pt-5 d-md-flex gap-5">
+        <div class="single-product__img w-100" id="main-img">
+            <img src="{{asset($product['image'])}}"  width="400px">
+          </div>
+
+        <div class="single-product__details w-100 d-flex flex-column justify-content-between">
+            <div>
+
+            <h4> Name : {{$product['title']}} </h4>
+            <div class="product__author"> <A>Author: {{$product['author']}}  </div>
+            <div class="product__author"> Page_Number: {{$product['page_number']  }} page</div>
             <div class="product__price mb-3 text-center d-flex gap-2">
                 <span class="product__price product__price--old fs-6 ">
+                    "{{$product['price']}}"
                 </span>
                 <span class="product__price fs-5">
-                    250.00 جنيه
+                    "{{$product['priceafterdiscount'] }}"  جنيه
                 </span>
             </div>
 
@@ -30,8 +39,13 @@
               <button class="single-product__increase border-0 bg-transparent position-absolute end-0 h-100 px-3">+</button>
               <button class="single-product__decrease border-0 bg-transparent position-absolute start-0 h-100 px-3">-</button>
             </div>
-            <form action="addcart" method="POST">
+
+            <form action="/addcart" method="POST">
                 @csrf
+                <input type="hidden" name="product_id"  value="{{$product['id']}}">
+                <input type="hidden" name="price"  value="{{$product['price']}}">
+
+
             <button class="single-product__add-to-cart primary-button w-100">اضافه الي السلة</button>
 
             </form>

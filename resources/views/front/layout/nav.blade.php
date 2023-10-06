@@ -1,3 +1,4 @@
+
 <nav class="nav">
     <div class="section-container w-100 d-flex align-items-center gap-4 h-100">
       <div class="nav__categories-btn align-items-center justify-content-center rounded-1 d-none d-lg-flex">
@@ -10,12 +11,14 @@
           <img class="h-100" src="{{asset("front")}}/assets/images/logo.png" alt="">
         </a>
       </div>
+      <form action="/search">
       <div class="nav__search w-100">
-        <input class="nav__search-input w-100" type="search" placeholder="أبحث هنا عن اي شئ تريده...">
+        <input class="nav__search-input w-100" type="search"  name="search"  placeholder="أبحث هنا عن اي شئ تريده...">
         <span class="nav__search-icon">
           <i class="fa-solid fa-magnifying-glass"></i>
         </span>
       </div>
+    </form>
       <ul class="nav__links gap-3 list-unstyled d-none d-lg-flex m-0">
         @auth
         <li class="nav__link nav__link-user">

@@ -20,8 +20,12 @@ Route::get('/', function () {
     return view('front.pages.home.index');
 });
 
-Route::resource('carts',CartController::class);
 
+Route::post('/addcart',[CartController::class,'addcart']);
+Route::get('/shop',[HomeController::class,'shop']);
+Route::get('/detail/{id}',[HomeController::class,'details']);
+
+Route::get('/search',[HomeController::class,'search']);
 
 
 Route::get('/about', function () {
@@ -65,13 +69,7 @@ Route::get('/orderstrack', function () {
 });
 
 
-Route::get('/products', function () {
-    return view('front.pages.shop.index');
-})->name('products.index');
 
-Route::get('/singelproduct', function () {
-    return view('front.pages.shop.singel-product');
-});
 
 Route::get('/policy', function () {
     return view('front.pages.policy.refund-policy');

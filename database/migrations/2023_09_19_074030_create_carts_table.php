@@ -13,14 +13,10 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->string('pendingOrcompleted');
-            $table->boolean('status')->default(0);
-            $table->string('CartProducts');
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('product_id')->constrained();
+            $table->enum('status',['pending','completed'])->default('pending');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
             $table->integer('price');
-            $table->integer('quantity');
-            $table->integer('total');
 
 
             $table->timestamps();

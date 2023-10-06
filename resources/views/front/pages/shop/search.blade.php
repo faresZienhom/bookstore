@@ -7,50 +7,18 @@
 <main>
     <!-- Product details Start -->
     <section class="section-container my-5 pt-5 d-md-flex gap-5">
-      <div class="single-product__img w-100" id="main-img">
-        <img src="{{asset("front")}}/assets/images/product-2.webp" alt="">
-      </div>
-      <div class="single-product__details w-100 d-flex flex-column justify-content-between">
-        <div>
+        <div class="col-sum-4">
+            <div class="trending-wrapper">
+                <h2> Resalt For Products</h2>
+        @foreach ($products as $product)
+        <a href="detail/{{ $product['id'] }}">
+            <img class="trending-image" src="{{$product['image']}}" width="200px">
 
-            <h4>Modern Full-Stack Development</h4>
-            <div class="product__author">Frank Zammetti</div>
-            <div class="product__author">373 صفحة</div>
-            <div class="product__price mb-3 text-center d-flex gap-2">
-                <span class="product__price product__price--old fs-6 ">
-                </span>
-                <span class="product__price fs-5">
-                    250.00 جنيه
-                </span>
-            </div>
+           <h4> DETAILS</h4>
 
-          <div class="d-flex w-100 gap-2 mb-3">
-            <div class="single-product__quanitity position-relative">
-              <input class="single-product__input text-center px-3" type="number" value="1" placeholder="---">
-              <button class="single-product__increase border-0 bg-transparent position-absolute end-0 h-100 px-3">+</button>
-              <button class="single-product__decrease border-0 bg-transparent position-absolute start-0 h-100 px-3">-</button>
-            </div>
-            <form action="addcart" method="POST">
-                @csrf
-            <button class="single-product__add-to-cart primary-button w-100">اضافه الي السلة</button>
 
-            </form>
-        </div>
-          <div class="single-product__favourite d-flex align-items-center gap-2 mb-4">
-            <i class="fa-regular fa-heart"></i>
-            اضافة للمفضلة
-          </div>
-        </div>
-        <div class="single-product__categories">
-          <p class="mb-0">رمز المنتج: غير محدد</p>
-          <div>
-            <span>التصنيفات: </span><a href="/shop">new</a>, <a href="/shop">احذية</a>, <a href="/shop">رجاليه</a>
-          </div>
-          <div>
-            <span>الوسوم: </span><a href="/shop">pr150</a>, <a href="/shop">flotrate</a>
-          </div>
-        </div>
-      </div>
+      @endforeach
+
     </section>
     <!-- Product details End -->
 

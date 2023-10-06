@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->integer('code');
-            $table->integer('subtotal');
-            $table->integer('total');
-            $table->boolean('status')->default(0);
-            $table->foreignId('user_id')->constrained();
+            $table->decimal('subtotal',8,2);
+            $table->decimal('total',8,2);
+            $table->enum('status',['pending','completed']);
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -19,6 +19,12 @@ class Product extends Model
     {
         return $this->hasMany(Wishlist::class);
     }
-
-
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
+    }
 }
+
+
+
+

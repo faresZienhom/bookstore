@@ -32,8 +32,8 @@
 
                 <li class="nav__link nav__user-link"><a href="/dashboard">لوحة التحكم</a></li>
                 @endif
-                <li class="nav__link nav__user-link"><a href="/orders">الطلبات</a></li>
-                <li class="nav__link nav__user-link"><a href="/accountdetails">تفاصيل الحساب</a></li>
+                <li class="nav__link nav__user-link"><a href="{{route('orders.index')}}">الطلبات</a></li>
+                <li class="nav__link nav__user-link"><a href="{{route('account.details')}}">تفاصيل الحساب</a></li>
                 <li class="nav__link nav__user-link"><a href="/favourites">المفضلة</a></li>
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="POST">
@@ -86,7 +86,7 @@
     <div class="nav-mobile fixed-bottom d-block d-lg-none">
       <ul class="nav-mobile__list d-flex justify-content-around gap-2 list-unstyled  m-0 border-top">
         <li class="nav-mobile__link">
-          <a class="d-flex align-items-center flex-column gap-1 text-decoration-none" href="/">
+          <a class="d-flex align-items-center flex-column gap-1 text-decoration-none" href=href="{{route('home.index')}}">
             <i class="fa-solid fa-house"></i>
             الرئيسية
           </a>
@@ -97,14 +97,13 @@
           الاقسام
         </li>
         <li class="nav-mobile__link d-flex align-items-center flex-column gap-1">
-          <a class="d-flex align-items-center flex-column gap-1 text-decoration-none" href="/profile">
+          <a class="d-flex align-items-center flex-column gap-1 text-decoration-none" href=href="/profile">
             <i class="fa-regular fa-user"></i>
             حسابي
           </a>
         </li>
         <li class="nav-mobile__link d-flex align-items-center flex-column gap-1">
           <a class="d-flex align-items-center flex-column gap-1 text-decoration-none" href="/favourites">
-            <i class="fa-regular fa-heart"></i>
             المفضلة
           </a>
         </li>

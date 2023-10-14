@@ -22,9 +22,9 @@
             <li><a class="footer__link text-decoration-none d-inline-block text-gray py-1" href="/about">من نحن</a></li>
             <li><a class="footer__link text-decoration-none d-inline-block text-gray py-1" href="/contact">تواصل معنا</a></li>
             <li><a class="footer__link text-decoration-none d-inline-block text-gray py-1" href="/policy-privacy">سياسة الخصوصية</a></li>
-            <li><a class="footer__link text-decoration-none d-inline-block text-gray py-1" href="/policy">سياسة الاستبدال و
+            <li><a class="footer__link text-decoration-none d-inline-block text-gray py-1" href="/refund-policy">سياسة الاستبدال و
                 الاسترجاع</a></li>
-            <li><a class="footer__link text-decoration-none d-inline-block text-gray py-1" href="/orderstrack">تتبع طلبك</a></li>
+                <li><a class="footer__link text-decoration-none d-inline-block text-gray py-1" href="{{route('orders.track')}}">تتبع طلبك</a></li>
           </div>
         </div>
         <div class="col-md-6 col-lg-3 px-md-4 mb-5 mb-lg-0">
@@ -74,6 +74,7 @@
   </footer>
   <!-- Footer Section End -->
 
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR2EbiPFT4E-h-nNgR5J7dBtH815uDmbw"></script>
   <script src="{{asset("front")}}/assets/js/vendors/all.min.js"></script>
   <script src="{{asset("front")}}/assets/js/vendors/bootstrap.bundle.min.js"></script>
   <script src="{{asset("front")}}/assets/js/vendors/jquery-3.7.0.js"></script>

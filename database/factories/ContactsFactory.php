@@ -21,8 +21,8 @@ class ContactsFactory extends Factory
             "name" => fake()->name(),
             "phone" => fake()->phoneNumber(),
             "email" => fake()->safeEmail(),
-            "Reason" => fake()->msedge(),
-            "message" => fake()->streetAddress(),
+            "subject" => fake()->msedge(),
+            "content" => fake()->streetAddress(),
 
         ];
     }

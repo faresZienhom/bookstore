@@ -1,38 +1,51 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
+use App\Models\Favourite;
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    public function addcart(request $request)
-      {
-        $cart = new Cart;
-        $cart->user_id =Auth::user()->id;
-        $cart->product_id = $request->product_id;
-        $cart->price = $request->price;
+    /**
+     * Display a listing of the resource.
+     */
+    public function store(Request $request, $id)
+    {
 
-        $cart ->save();
+        $product = Product::where('id', $id)->first();
 
-        return back()
-        ->with("success","cart added successfully");
+        $total = ($product->price - $product->discount) * $product->quantity;
+        Order::create([
+            'price' =>  $product->price,
+            'discount' => $product->discount,
+            'quantity' => $request->quantity,
+            'total'    => $total,
+            'user_id' => Auth::user()->id,
+            'product_id' => $id,
+            'status'  => '0'
+        ]);
 
-      }
+        return back()->with('message', 'order has added to your cart');
+    }
 
+    public function addToFav(Request $request, $id)
+    {
 
-      public function cartitem()
-      {
+        $product = Product::where('id', $id)->first();
+        Wishlist::create([
+            'user_id' => Auth::user()->id,
+            'product_id' => $id,
+        ]);
 
-        $userid = Auth::user()->id;
-        return Cart::where('user_id',$userid)->count();
-      }
-
+        return back()->with('message', 'product has added to favourts');
     }
 
 
-
+}

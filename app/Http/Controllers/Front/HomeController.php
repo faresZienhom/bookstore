@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use App\Models\Product;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -10,30 +11,21 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
+        $sliders = Slider::where('status', 1)->get();
+        $banners = Banner::where('status', 1)->get();
+        $products = Product::select("*")
+        ->offset(0)
+        ->limit(10)
+        ->get();
+        return view('front.pages.home.index', compact('sliders', 'products', 'banners'));
+    }
 
-    $products = Product::get();
-    $sliders = Slider::where("status",1)->get();
-    return view("front.pages.home.index",compact("sliders","products"));
 
-}
-public function shop(){
+    public function search(request $request){
 
-    $products = Product::get();
+        $search = Product ::where('title','like','%' .$request->input('search') . '%')->get();
+        return view("front.pages.shop.search",['products'=>$search]);
 
-    return view("front.pages.shop.index",['products'=>$products]);
+      }
 
-}
-public function details($id){
-
-    $product = Product::find($id);
-
-    return view("front.pages.shop.details",['product'=>$product]);
-
-}
-public function search(request $request){
-
-  $search = Product ::where('title','like','%' .$request->input('search') . '%')->get();
-  return view("front.pages.shop.search",['products'=>$search]);
-
-}
 }

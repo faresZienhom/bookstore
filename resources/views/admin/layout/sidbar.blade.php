@@ -77,6 +77,27 @@
                </a>
              </li>
              <li class="nav-item">
+                <a href="/branches" class="nav-link">
+                  <i class="fa fa-folder"></i>
+                  <p>
+                    Branches
+
+                    <span class="right badge badge-danger"></span>
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/faq" class="nav-link">
+                  <i class="fa fa-folder"></i>
+                  <p>
+                    Faq
+
+                    <span class="right badge badge-danger"></span>
+                  </p>
+                </a>
+              </li>
+
+             <li class="nav-item">
               <a href="/categories" class="nav-link">
                 <i class="fa fa-bars"></i>
                 <p>
@@ -97,16 +118,26 @@
              </a>
            </li>
            <li class="nav-item">
-            <a href="/wishlist" class="nav-link">
+            <a href="/orders" class="nav-link">
               <i class="fa fa-heartbeat"></i>
               <p>
-                Wishlists
+                Orders
 
                 <span class="right badge badge-danger"></span>
               </p>
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="/carts" class="nav-link">
+              <i class="fas fa-store-slash	"></i>
+              <p>
+                Carts
+
+                <span class="right badge badge-danger"></span>
+              </p>
+            </a>
+          </li>
 
 
           <li class="nav-item ">

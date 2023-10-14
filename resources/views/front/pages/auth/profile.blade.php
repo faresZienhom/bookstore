@@ -33,10 +33,10 @@
             <a class="py-2 px-3 text-black text-decoration-none" href="/profile">لوحة التحكم</a>
           </li>
           <li class="profile__tab">
-            <a class="py-2 px-3 text-black text-decoration-none" href="/orders">الطلبات</a>
+            <a class="py-2 px-3 text-black text-decoration-none" href="{{route('orders.index')}}">الطلبات</a>
           </li>
           <li class="profile__tab">
-            <a class="py-2 px-3 text-black text-decoration-none" href="/accountdetails">تفاصيل الحساب</a>
+            <a class="py-2 px-3 text-black text-decoration-none" href="{{route('account.details')}}">تفاصيل الحساب</a>
           </li>
           <li class="profile__tab">
             <a class="py-2 px-3 text-black text-decoration-none" href="/favourites">المفضلة</a>
@@ -56,10 +56,10 @@
 
           <p>
             من خلال لوحة تحكم الحساب الخاص بك، يمكنك استعراض
-            <a class="text-danger" href="/orders">أحدث الطلبات</a>،
+            <a class="text-danger" href="{{route('orders.index')}}">أحدث الطلبات</a>،
            والفواتير
             الخاصة بك، بالإضافة إلى
-            <a class="text-danger" href="/accountdetails">تعديل كلمة المرور وتفاصيل حسابك</a>.
+            <a class="text-danger" href="{{route('account.details')}}">تعديل كلمة المرور وتفاصيل حسابك</a>.
           </p>
         </div>
       </div>

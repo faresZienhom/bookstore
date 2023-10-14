@@ -20,14 +20,16 @@ class ProductFactory extends Factory
         return [
 
             'title'=>fake()->title(),
+            'descreption'=>fake()->name(),
             'image' => 'front/assets/images/carousel-' . rand(1,3) . '.png',
             'author'=>fake()->name(),
             'page_number'=>fake()->numerify(),
             'price'=>fake()->numerify(),
             'discount'=>fake()->numerify(),
-            'priceafterdiscount'=>fake()->numerify(),
-            'count'=>fake()->numerify(),
+            'quantity'=>fake()->numerify(),
+            "product_code" => fake()->numerify(),
             "categories_id" => categories::inRandomOrder()->first()?->id
+
         ];
     }
 }

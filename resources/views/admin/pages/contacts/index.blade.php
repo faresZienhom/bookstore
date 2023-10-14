@@ -22,8 +22,8 @@
                     <td>{{ $contact->name }}</td>
                     <td>{{ $contact->phone }}</td>
                     <td>{{ $contact->email }}</td>
-                    <td>{{ $contact->Reason }}</td>
-                    <td>{{ $contact->message }}</td>
+                    <td>{{ $contact->subject }}</td>
+                    <td>{{ $contact->content }}</td>
                     <td>{{ $contact->created_at }}</td>
                     <td class="d-flex">
                         <form action="{{ route('contacts.destroy', $contact->id) }}" method="post">

@@ -38,7 +38,7 @@ class BannerController extends Controller
           ]));
 
           $ext = $request->file('image')->getClientOriginalExtension();
-          $imageName = "slider" . time() .rand(100,100000) . "." . $ext;
+          $imageName = "banner" . time() .rand(100,100000) . "." . $ext;
           $request->file("image")->move(public_path("images/banner"),$imageName);
           Banner::create([
              'image'=>$imageName,
